@@ -147,7 +147,7 @@ This project follows gold standard machine learning practices to prevent data le
 ### 2. Exploratory Data Analysis (EDA)
 - Performed on **training data only** to prevent information leakage
 - Analyzed feature distributions, correlations, and churn patterns
-- Identified key features: Account length, International plan, Customer service calls, Total charges
+- Identified strong churn-related signals including International plan, customer service interactions, and usage behavior
 
 ### 3. Feature Engineering & Pipeline Construction
 - **Custom Transformers**: ColumnDropper, TargetEncoder, BinaryEncoder, Log1pTransformer
@@ -202,16 +202,18 @@ All models use `class_weight='balanced'` or equivalent to handle the imbalanced 
 ### Final Test Set Performance (After Calibration & Threshold Tuning)
 
 **Key Metrics:**
-- **Recall**: Target of 80% achieved (maximizes churn detection)
-- **Precision**: Optimized based on business constraints
-- **ROC-AUC**: Evaluates model's ranking ability
-- **PR-AUC**: More informative for imbalanced datasets
-- **Brier Score**: Measures calibration quality
+- **Decision Threshold**: 0.334 (targeting ~80% recall from CV threshold tuning)
+- **Recall**: 79.4%
+- **Precision**: 74.8%
+- **F1-Score**: 77.0%
+- **ROC-AUC / PR-AUC**: 0.9333 / 0.8446
+- **Brier Score (Calibrated)**: 0.0500
 
 **Business Impact:**
-- Identified high-risk customers for targeted retention campaigns
-- Cost-benefit analysis demonstrates positive ROI of intervention
-- Actionable insights for customer service improvements
+- **Random Targeting ROI**: 676.7%
+- **Model-Driven ROI**: 4366.0%
+- **Net Uplift vs Random**: +19 retained customers, +$19,000 additional revenue (campaign cost: $515)
+- Identified high-risk customers for targeted retention campaigns and produced an actionable Top-50 list
 
 *Detailed results and visualizations available in the Jupyter notebook.*
 
