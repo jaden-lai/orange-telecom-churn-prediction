@@ -2,6 +2,19 @@
 
 This directory contains the datasets used for the Orange Telecom Churn Prediction project.
 
+## How to Obtain the Dataset
+
+**The dataset files are not included in this repository.** You must download them from Kaggle:
+
+1. Visit the [Orange Telecom Churn Dataset on Kaggle](https://www.kaggle.com/datasets/mnassrib/telecom-churn-datasets)
+2. Click the "Download" button (requires free Kaggle account login)
+3. Extract the downloaded ZIP file
+4. Place the following CSV files in this `data/` directory:
+   - `churn-bigml-80.csv`
+   - `churn-bigml-20.csv`
+
+**Note**: These files should be placed directly in the `data/` folder alongside this README file.
+
 ## Dataset Files
 
 ### 1. churn-bigml-80.csv
